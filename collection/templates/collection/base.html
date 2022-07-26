@@ -12,35 +12,47 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container">
-    <div class="row" style="width:100%;">
-      <div class="col-5 "><a class="navbar-brand" href="#"><img src="{% static "collection/img/rocket.png"%}" class="img-fluid"></a></div>
-      <div class="col">
-        <form class="form-inline my-2 my-md-0" style="width:25%;">
-          <input class="form-control header-form text-center" type="text" placeholder="Owner">
-        </form>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <div class="row" style="width:100%;">
+        <div class="col-5 "><a class="navbar-brand" href="#"><img src="{% static "collection/img/rocket.png"%}" class="img-fluid"></a></div>
+        <div class="col">
+          <form class="form-inline my-2 my-md-0" style="width:25%;">
+            <input class="form-control header-form text-center" type="text" placeholder="Owner">
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-{% block content %}
-{% endblock %}
-<footer class="page-footer footer-dark bg-dark">
+  </nav>
+  <!-- Сообщение после регистрации -->
+  {% if messages %}
+    {% for mess in messages %}
+      </div>
+        <div class="container alert alert-success">
+          {{mess}}
+        </div>
+    {% endfor %}
+  {%endif%}
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center text-white py-3">© 2022 Copyright:
-    <a class="text-decoration-none text-white"href="/">NFT_Collection</a>
-  </div>
-  <!-- Copyright -->
+  {% block content %}
+  {% endblock %}
+  <footer class="page-footer footer-dark bg-dark">
 
-</footer>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-white py-3">© 2022 Copyright:
+      <a class="text-decoration-none text-white"href="/">NFT_Collection</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
 <script>
   $('.header-form').focus(function(e){
-  var $self = $(this);
-  $self.data('placeholder-tmp', $self.attr('placeholder'));
-  $self.attr('placeholder', '');
-
+    var $self = $(this);
+    $self.data('placeholder-tmp', $self.attr('placeholder'));
+    $self.attr('placeholder', '');
+  });
+  $('.header-form').focusout( function(e){
+    $(this).attr('placeholder', "Owner");
   });
 </script>
 </body>

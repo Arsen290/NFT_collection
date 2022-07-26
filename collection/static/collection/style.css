@@ -60,9 +60,19 @@ body {
     transform: scale(1.2);
     box-shadow: 0 0 15px 5px var(--ColorButton);
 }
+/* .LinkButton:hover button::before
+{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  box-shadow: inset 0px 0px 15px 5px var(--ColorButton);
+  top:0;
+  left: 0;
+} */
 
 /* glass */
-.ButtonContainers{
+.ButtonContainers, .glass{
 /* From https://css.glass */
 background: rgba(255, 255, 255, 0.13);
 border-radius: 16px;
