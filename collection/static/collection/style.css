@@ -1,0 +1,86 @@
+body {
+  background: url("img/home.jpg");
+  background-size: cover;
+  background-position: 0;
+}
+.header-form:focus{
+  text-align: left!important;
+}
+.container.main{
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-footer{
+  bottom: 0;
+  height: 10vh;
+}
+
+*
+{
+    border: none;
+    overflow: none;
+    outline: none;
+}
+
+.ButtonContainers
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.LinkButton button
+{
+
+    margin: 10px 0;
+    position: relative;
+    transition: .3s;
+    padding: 5px 25px;
+    width: 100%;
+    font-size: 24px;
+    font-family: 'Mukta', sans-serif;
+    border: 4px solid #fff;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+}
+.LinkButton:hover button
+{
+    letter-spacing: 0.05em;
+    transition: .3s;
+    border-color: var(--ColorButton);
+    color: var(--ColorButton);
+    transform: scale(1.2);
+    box-shadow: 0 0 15px 5px var(--ColorButton);
+}
+
+/* glass */
+.ButtonContainers{
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.13);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.1px);
+-webkit-backdrop-filter: blur(2.1px);
+border: 1px solid rgba(255, 255, 255, 0.28);
+width: 40%;
+padding: 5% 5%;
+}
+
+@media(max-width: 1247px) {
+    .ButtonContainers
+    {
+        width: 500px;
+    }
+}
+.img-fluid{
+  max-width: 50px;
+  height: auto;
+}

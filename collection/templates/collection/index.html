@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        /* change */
+        /*  */
+        *
+        {
+            border: none;
+            overflow: none;
+            outline: none;
+        }
+        body
+        {
+
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a1d;
+            color: white;
+        }
+        .container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 800px;
+            margin-top: 50px;
+            /* text-align: center; */
+            margin: 20px;
+        }
+        /* button */
+        .ButtonContainers
+        {
+            width:18%;
+        }
+        .LinkButton
+        {
+
+            text-decoration: none;
+        }
+        .LinkButton button
+        {
+
+            margin: 10px 0;
+            position: relative;
+            transition: .3s;
+            padding: 5px 25px;
+            width: 100%;
+            font-size: 34px;
+            font-family: 'Mukta', sans-serif;
+            border: 4px solid #fff;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0);
+            text-transform: uppercase;
+        }
+        .LinkButton:hover button
+        {
+            letter-spacing: 0.05em;
+            transition: .3s;
+            border-color: var(--ColorButton);
+            color: var(--ColorButton);
+            transform: scale(1.2);
+            box-shadow: 0 0 15px 5px var(--ColorButton);
+        }
+        .LinkButton button::before
+        {
+            transition: .3s;
+            position: absolute;
+            content: " ";
+            width: 15px;
+            height: 5px;
+            background-color: #0a0a1d;
+            border: 4px solid #fff;
+            top: -12%;
+            left: 10%;
+        }
+        .LinkButton:hover button::before
+        {
+            transition: .8s;
+            border-color: var(--ColorButton);
+            left: 70%;
+        }
+        .LinkButton button::after
+        {
+            transition: .3s;
+            position: absolute;
+            content: " ";
+            width: 15px;
+            height: 5px;
+            background-color: #0a0a1d;
+            border: 4px solid #fff;
+            bottom: -12%;
+            left: 80%;
+        }
+        .LinkButton:hover button::after
+        {
+
+            transition: .8s;
+            border-color: var(--ColorButton);
+            left: 20%;
+        }
+        /* @media(max-width: 1440px) {
+            .ButtonContainers
+            {
+                width: 30%;
+            }
+        }
+        @media(max-width: 900px) {
+            .ButtonContainers
+            {
+                width: 50%;
+            }
+        }
+        @media(max-width: 560px) {
+            .ButtonContainers
+            {
+                width: 70%;
+            }
+        }
+        @media(max-width: 380px) {
+            .ButtonContainers
+            {
+                width: 90%;
+            }
+        } */
+    </style>
+    <div class="container">
+        <div class="ButtonContainers">
+            <a style="--ColorButton: rgb(0, 255, 0);" class="LinkButton" href="#"><button>login</button></a>
+            <a style="--ColorButton: rgb(255, 255, 0);" class="LinkButton" href="#"><button>registration</button></a>
+            <a style="--ColorButton: rgb(255, 0, 0);" class="LinkButton" href="#"><button>exit</button></a>
+        </div>
+    </div>
+</body>
+</html>
