@@ -94,3 +94,12 @@ padding: 5% 5%;
   max-width: 50px;
   height: auto;
 }
+
+.img-fluid:hover{
+  transition: .3s;
+  transform: scale(1.2);
+}
+
+td{
+  padding-bottom: 10px;
+}

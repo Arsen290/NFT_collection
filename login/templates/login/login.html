@@ -1,7 +1,16 @@
 {% extends 'collection/base.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
-  <form class="" action="index.html" method="post">
-    {{ form }}
-  </form>
+  <div class="container main">
+    <div class="glass">
+      <h1 class="text-success" style="text-align:center">Login</h1>
+      <form class="form-register"  method="post">
+        {%csrf_token%}
+        <table class="text-success">
+          {{form}}
+        </table>
+        <button class="btn btn-outline-success" name="button" type="submit" style="float: right; margin-top:10px">Login</button>
+      </form>
+    </div>
+  </div>
 {% endblock %}

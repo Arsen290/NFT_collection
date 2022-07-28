@@ -10,7 +10,7 @@ def reg(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            # form.save()
+            form.save()
             username = form.cleaned_data.get("username")
             messages.success(request, f'The owner {username} has been successfully created')
             return redirect('home') #Поменять путь перехода на логин
