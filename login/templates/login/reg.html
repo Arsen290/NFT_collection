@@ -6,13 +6,13 @@
 {% block content %}
 <div class="container main">
   <div class="glass">
-    <h1 class="text-warning" style="text-align:center">{{title}}</h1>
+    <h1 class="" style="text-align:center; color:rgb(255, 255, 0); ">{{title}}</h1>
     <form method="post" class="form-register" >
       {%csrf_token%}
-      <table class="text-warning">
+      <table class="" style="color:rgb(255, 255, 0);">
         {{form}}
       </table>
-      <button class="btn btn-outline-warning" name="button" type="submit" style="float: right; margin-top:10px" >{{title}}</button>
+      <button class="btn btn-outline-warning" name="button" type="submit" style="float: right; margin-top:10px; color:rgb(255, 255, 0);border-color: rgb(255, 255, 0);" >{{title}}</button>
     </form>
   </div>
 </div>

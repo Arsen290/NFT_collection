@@ -1,0 +1,26 @@
+{% extends 'collection/base.html' %}
+{% block title %}Password reset{% endblock %}
+{% block content %}
+  <div class="container main">
+    <div style="background: rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.1px);
+    -webkit-backdrop-filter: blur(2.1px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+
+    padding:5% 5% ;
+">
+      <!-- <h1 class="" style="text-align:center; color:rgb(255, 0, 0);" >Password reset</h1> -->
+      <form class="form-register"  style="text-align:right" method="post">
+        {%csrf_token%}
+        <!-- <table class="" style="color:rgb(255, 0, 0);"> -->
+        <div style=" color:rgb(255, 0, 0);">{{form.as_p}}</div>
+
+        <!-- </table> -->
+        <button class="btn btn-outline-danger" name="button" type="submit" style=" color:rgb(255, 0, 0);border-color: rgb(255, 0, 0); ">Request new pass</button>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

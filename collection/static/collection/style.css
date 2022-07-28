@@ -97,9 +97,24 @@ padding: 5% 5%;
 
 .img-fluid:hover{
   transition: .3s;
-  transform: scale(1.2);
+  transform: scale(1.6);
 }
 
 td{
   padding-bottom: 10px;
+}
+
+.btn-outline-success:hover{
+  background-color: rgb(0, 255, 0)!important;
+  color:white!important;
+}
+
+.form-home
+{
+  width: 25%;
+}
+.navbar .container .row
+{
+  display: flex;
+  align-items: center;
 }
