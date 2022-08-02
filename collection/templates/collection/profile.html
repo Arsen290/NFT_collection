@@ -1,11 +1,52 @@
 {% extends 'collection/base.html' %}
-
+{% load static %}
 {% block title %}
   Collection
 {% endblock %}
 {% block content %}
-  <div class="container main" style="position:relative">
-    <h1 class="pt-2" style="color:white; position:absolute ; top:0  ">Collection {{user.username}}</h1>
-  </div>
+<div class="container main" style="position:relative; height: 35px;" >
+  <h1 class="pt-2" style="color:white; position:absolute ; top:0  ">Collection {{user.username}}</h1>
+</div>
+<section class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide" style="background-image:url(https://img.seadn.io/files/40dd9773f0af35eff0873817eb1bcf08.png?fit=max&w=600)">
+			<div class="swiper-content">
+				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
+				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
+			</div>
+		</div>
+		<div class="swiper-slide" style="background-image:url(https://img.seadn.io/files/087042fb28e67ab9afa1b998b9073382.png?fit=max&w=600)">
+			<div class="swiper-content">
+				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
+				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
+			</div>
+		</div>
+		<div class="swiper-slide" style="background-image:url(https://lh3.googleusercontent.com/lfTXj3h1iWBycccyE5YHMMK1FL8fhlwCC49A8PXGUXmj_GBjdo0mwg845SVNfoHbR0l62Ei8Ew-wnGkMqQbutdOnAyGMm02Fz0hh=w600)">
+			<div class="swiper-content">
+				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
+				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
+			</div>
+		</div>
+		<div class="swiper-slide" style="background-image:url(https://lh3.googleusercontent.com/fA3pZDzwZ_YrmA7qb6FI9t6MQR16_2zkkD2I0gpeg6E7kJjJqmGFQSiHf0EPEhGAudmnE_c-bj66eMpDI9ND6Z--2MusRH7_eX5i=w600)">
+			<div class="swiper-content">
+				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
+				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
+			</div>
+		</div>
+		<div class="swiper-slide" style="background-image:url(https://lh3.googleusercontent.com/YGcPtzirsiiAYSThbPFt2iSL2jIfGNqJ25V_47LZYA_SoMQX4iAH8XFe3xMzTvJf6vhxF-wq2P5DMwoQSJFEwmF2djBCuFSiXRR-=s0)">
+			<div class="swiper-content">
+				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
+				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-prev swiper-button-white"></div>
+	<div class="swiper-button-next swiper-button-white"></div>
+</section>
+{% endblock %}
+{% block Scripts %}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src='{% static "collection/main.js" %}'></script>
 
 {% endblock %}
