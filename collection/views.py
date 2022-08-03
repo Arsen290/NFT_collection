@@ -10,6 +10,6 @@ def home(request):
 @login_required
 def profile(request):
     data={
-        'NFT_Collection' : NFTCollection.objects.all(),
+        'NFT_Collection' : NFTCollection.objects.filter(collector=request.user.id),
     }
     return render(request, 'collection/profile.html ',data)
