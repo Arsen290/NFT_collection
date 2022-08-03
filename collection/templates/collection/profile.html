@@ -26,7 +26,25 @@
     <button type="submit" class='btn btn-outline-success' style='position:absolute; right:0 '>Add</button>
   </form>
 </div>
+<!-- Slider -->
 <section class="swiper-container">
+  <div class="swiper-wrapper">
+    {%for item in data.NFT_Collection%}
+  		<div class="swiper-slide" style="background-image:url('{{ item.cardsUrl }}')">
+  			<div class="swiper-content" style=>
+  				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">{{ item.cardsName }}</p>
+  				<span class="swiper-caption" data-swiper-parallax="-20%">{{ item.cardsDescription }}</span>
+  			</div>
+      </div>
+    {%endfor%}
+  </div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-prev swiper-button-white"></div>
+	<div class="swiper-button-next swiper-button-white"></div>
+</section>
+
+
+<!-- <section class="swiper-container">
 	<div class="swiper-wrapper">
 		<div class="swiper-slide" style="background-image:url(https://img.seadn.io/files/40dd9773f0af35eff0873817eb1bcf08.png?fit=max&w=600)">
 			<div class="swiper-content">
@@ -62,7 +80,7 @@
 	<div class="swiper-pagination"></div>
 	<div class="swiper-button-prev swiper-button-white"></div>
 	<div class="swiper-button-next swiper-button-white"></div>
-</section>
+</section> -->
 {% endblock %}
 {% block Scripts %}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.js"></script>

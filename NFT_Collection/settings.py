@@ -125,8 +125,11 @@ EMAIL_HOST_PASSWORD=" " #Put pass for send form to recover pass
 
 STATIC_URL = '/static/'
 
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "NFT_Collection\static"),
+    os.path.join(BASE_DIR, "collection\static"),
+    os.path.join(BASE_DIR, "login\static"),
 ]
 
 #Страницу пеереадресацию после авторизации , поменять на Collectrion
