@@ -1,10 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from . import views as userViews
 from django.contrib.auth import views as authViews
 
+
+
 urlpatterns = [
     path('registration/', userViews.reg, name='reg'),
-    path('login/', authViews.LoginView.as_view(template_name='login/login.html'), name='login'),
+    path('login/', authViews.LoginView.as_view(template_name='login/login.html',redirect_authenticated_user=True), name='login'),
     path('exit/', authViews.LogoutView.as_view(template_name='collection/home.html'), name='logout'),
 
     path('pass-reset/',authViews.PasswordResetView.as_view(template_name='login/pass-reset.html'), name='pass-reset'),

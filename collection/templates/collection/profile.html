@@ -5,7 +5,26 @@
 {% endblock %}
 {% block content %}
 <div class="container main" style="position:relative; height: 35px;" >
-  <h1 class="pt-2" style="color:white; position:absolute ; top:0  ">Collection {{user.username}}</h1>
+  <h1 class="pt-2" style="color:white; position:absolute ; top:0 ">Collector: <span style="color:#30d5c8;"><i>{{user.username}}</i></span></h1>
+</div>
+<div id='form-wrap' class='glass'>
+  <form role="form" action="/requestFine" autocomplete="off" method="POST" style="position:relative">
+    <table style="color: rgb(0, 0, 0);">
+      <tr>
+        <td><label>Card's url:</label></td>
+        <td><input type="url" name="cardsUrl"></td>
+      </tr>
+      <tr>
+        <td><label>Card's name:</label></td>
+        <td><input type="text" name="cardsName" maxlength="20"></td>
+      </tr>
+      <tr>
+        <td style="vertical-align: text-top;"><label name="formDescription">Description:</label></td>
+        <td><textarea name="cardsDescription" rows="3" style="width:100%"></textarea></td>
+      </tr>
+    </table>
+    <button type="submit" class='btn btn-outline-success' style='position:absolute; right:0 '>Add</button>
+  </form>
 </div>
 <section class="swiper-container">
 	<div class="swiper-wrapper">

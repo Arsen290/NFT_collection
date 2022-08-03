@@ -27,8 +27,8 @@
         </div>
         {%if user.is_authenticated%}
           <div class="col-2 d-flex justify-content-between" >
-            <a href="{%url 'logout'%}"><button class='btn btn-outline-success' style="width:120px;"> Add a card </button></a>
-            <a href="/"><button class='btn btn-outline-danger'   > Exit </button></a>
+            <button class='btn btn-outline-success' style="min-width:120px;" onclick='openForm()'> Add a card </button>
+            <a href="{%url 'logout'%}"><button class='btn btn-outline-danger'> Exit </button></a>
           </div>
         {%else%}
           <div class="col-2"></div>

@@ -1,4 +1,4 @@
-
+// Slider
 var sliderSelector = '.swiper-container',
 options = {
 	init: false,
@@ -38,3 +38,10 @@ options = {
 };
 var mySwiper = new Swiper(sliderSelector, options);
 mySwiper.init();
+
+// open form Add a card
+const formWrap = document.getElementById('form-wrap');
+
+function openForm() {
+    formWrap.classList.add('open');
+}
