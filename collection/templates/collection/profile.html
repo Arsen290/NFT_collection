@@ -8,22 +8,12 @@
   <h1 class="pt-2" style="color:white; position:absolute ; top:0 ">Collector: <span style="color:#30d5c8;"><i>{{user.username}}</i></span></h1>
 </div>
 <div id='form-wrap' class='glass'>
-  <form role="form" action="/requestFine" autocomplete="off" method="POST" style="position:relative">
-    <table style="color: rgb(0, 0, 0);">
-      <tr>
-        <td><label>Card's url:</label></td>
-        <td><input type="url" name="cardsUrl"></td>
-      </tr>
-      <tr>
-        <td><label>Card's name:</label></td>
-        <td><input type="text" name="cardsName" maxlength="20"></td>
-      </tr>
-      <tr>
-        <td style="vertical-align: text-top;"><label name="formDescription">Description:</label></td>
-        <td><textarea name="cardsDescription" rows="3" style="width:100%"></textarea></td>
-      </tr>
+  <form role="form" action="" autocomplete="off" method="POST" style="position:relative">
+    {% csrf_token %}
+    <table class="addtable" style="width:auto;">
+      {{form}}
     </table>
-    <button type="submit" class='btn btn-outline-success' style='position:absolute; right:0 '>Add</button>
+    <button type="submit" class='btn btn-outline-success' style='position:absolute;right:0px'>Add</button>
   </form>
 </div>
 <!-- Slider -->
@@ -43,44 +33,6 @@
 	<div class="swiper-button-next swiper-button-white"></div>
 </section>
 
-
-<!-- <section class="swiper-container">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide" style="background-image:url(https://img.seadn.io/files/40dd9773f0af35eff0873817eb1bcf08.png?fit=max&w=600)">
-			<div class="swiper-content">
-				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
-				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
-			</div>
-		</div>
-		<div class="swiper-slide" style="background-image:url(https://img.seadn.io/files/087042fb28e67ab9afa1b998b9073382.png?fit=max&w=600)">
-			<div class="swiper-content">
-				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
-				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
-			</div>
-		</div>
-		<div class="swiper-slide" style="background-image:url(https://lh3.googleusercontent.com/lfTXj3h1iWBycccyE5YHMMK1FL8fhlwCC49A8PXGUXmj_GBjdo0mwg845SVNfoHbR0l62Ei8Ew-wnGkMqQbutdOnAyGMm02Fz0hh=w600)">
-			<div class="swiper-content">
-				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
-				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
-			</div>
-		</div>
-		<div class="swiper-slide" style="background-image:url(https://lh3.googleusercontent.com/fA3pZDzwZ_YrmA7qb6FI9t6MQR16_2zkkD2I0gpeg6E7kJjJqmGFQSiHf0EPEhGAudmnE_c-bj66eMpDI9ND6Z--2MusRH7_eX5i=w600)">
-			<div class="swiper-content">
-				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
-				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
-			</div>
-		</div>
-		<div class="swiper-slide" style="background-image:url(https://lh3.googleusercontent.com/YGcPtzirsiiAYSThbPFt2iSL2jIfGNqJ25V_47LZYA_SoMQX4iAH8XFe3xMzTvJf6vhxF-wq2P5DMwoQSJFEwmF2djBCuFSiXRR-=s0)">
-			<div class="swiper-content">
-				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
-				<span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
-			</div>
-		</div>
-	</div>
-	<div class="swiper-pagination"></div>
-	<div class="swiper-button-prev swiper-button-white"></div>
-	<div class="swiper-button-next swiper-button-white"></div>
-</section> -->
 {% endblock %}
 {% block Scripts %}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.js"></script>

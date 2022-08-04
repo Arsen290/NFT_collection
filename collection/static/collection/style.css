@@ -4,6 +4,8 @@ body {
   background-position: 0;
 }
 
+
+
 .header-form:focus{
   text-align: left!important;
 }
@@ -14,10 +16,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .page-footer{
   bottom: 0;
   height: 10vh;
 }
+
 
 *
 {
@@ -81,13 +85,12 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(2.1px);
 -webkit-backdrop-filter: blur(2.1px);
 border: 1px solid rgba(255, 255, 255, 0.28);
-width: 40%;
+width: auto;
 padding: 5% 5%;
 }
 
 @media(max-width: 1247px) {
-    .ButtonContainers
-    {
+.ButtonContainers{
         width: 500px;
     }
 }
@@ -236,4 +239,30 @@ td{
   transform:translate(-50%, -50%);
   padding: 50px;
   padding-bottom: 60px;
+}
+
+/* Navbar and footer changing */
+.navbar{
+  width:auto;
+  padding:0;
+  height:80px;
+}
+.page-footer {
+  width:100%;
+  padding:0;
+  height:8vh;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+/* Add Cars */
+
+#id_cardsDescription{
+  height:8vh;
+  width:185px;
+}
+
+th{
+  vertical-align: text-top;
 }
