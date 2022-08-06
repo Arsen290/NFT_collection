@@ -21,14 +21,17 @@
       <div class="row justify-content-between align-center" style="width:100%;">
         <div class="col-2 "><a class="navbar-brand" href="/"><img src="{% static "collection/img/rocket.png"%}" class="img-fluid"></a></div>
         <div class="col-2" style="  ">
-          <form class="form-home w-100">
-            <input class="form-control header-form text-cente w-100" type="text" placeholder="Owner">
+          <form class="form-home w-100 d-flex">
+            <input class="form-control header-form text-center w-100" type="text" placeholder="Owner">
+            <button type="submit" class="LinkButton" name="button">find</button>
           </form>
         </div>
-        {%if user.is_authenticated%}
+        {% if request.user.is_authenticated %}
           <div class="col-2 d-flex justify-content-between" >
-            <button class='btn btn-outline-success' style="min-width:120px;" onclick='openForm()'> Add a card </button>
-            <a href="{%url 'logout'%}"><button class='btn btn-outline-danger'> Exit </button></a>
+            {% if request.user == useeeer %}
+              <button class='btn btn-outline-success' style="min-width:120px;" onclick='openForm()'> Add a card </button>
+              <a href="{%url 'logout'%}"><button class='btn btn-outline-danger'> Exit </button></a>
+            {% endif %}
           </div>
         {%else%}
           <div class="col-2"></div>

@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
 <div class="container main" style="position:relative; height: 35px;" >
-  <h1 class="pt-2" style="color:white; position:absolute ; top:0 ">Collector: <span style="color:#30d5c8;"><i>{{user.username}}</i></span></h1>
+  <h1 class="pt-2" style="color:white; position:absolute ; top:0 ">Collector: <span style="color:#30d5c8;"><i>{{user}}</i></span></h1>
 </div>
 <div id='form-wrap' class='glass'>
   <form role="form" action="" autocomplete="off" method="POST" style="position:relative">
@@ -19,13 +19,15 @@
 <!-- Slider -->
 <section class="swiper-container">
   <div class="swiper-wrapper">
+
+    <!-- Only for authentification username -->
     {%for item in NFT_Collection%}
-  		<div class="swiper-slide" style="background-image:url('{{ item.cardsUrl }}')">
-  			<div class="swiper-content" style=>
-  				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">{{ item.cardsName }}</p>
-  				<span class="swiper-caption" data-swiper-parallax="-20%">{{ item.cardsDescription }}</span>
-  			</div>
-      </div>
+    		<div class="swiper-slide" style="background-image:url('{{ item.cardsUrl }}')">
+    			<div class="swiper-content" style=>
+    				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">{{ item.cardsName }}</p>
+    				<span class="swiper-caption" data-swiper-parallax="-20%">{{ item.cardsDescription }}</span>
+    			</div>
+        </div>
     {%endfor%}
   </div>
 	<div class="swiper-pagination"></div>

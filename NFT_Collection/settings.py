@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'collection',
     'login',
+    'allauth',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,7 @@ STATICFILES_DIRS = [
 ]
 
 #Страницу пеереадресацию после авторизации , поменять на Collectrion
+# УДАЛИТЬ ACCOUNT_ADAPTER = "path.to.MyAccountAdapter"
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL= 'login'
 # Default primary key field type
