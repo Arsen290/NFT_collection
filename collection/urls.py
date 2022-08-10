@@ -8,6 +8,5 @@ urlpatterns = [
     #realization redirect to profile_slug
     path('profile/', views.profile_redirect, name="profile"),
     path('profile/<slug:slug>/', views.profile, name="profile_slug"),
-    # path('profile/', views.profile, name="profile"),
-
+    path('profile/delete/<int:id>/ ', views.DeleteCardView, name="delete_card"),
 ]

@@ -8,6 +8,7 @@
   <h1 class="pt-2" style="color:white; position:absolute ; top:0 ">Collector: <span style="color:#30d5c8;"><i>{{user}}</i></span></h1>
 </div>
 <div id='form-wrap' class='glass'>
+  <div style="margin-top: -60px;margin-right:-50px; margin-bottom:30px;" class="d-flex justify-content-end align-items-center"><button style="width:40px; height:40px;" id="form-wrap-button-exit" onclick='closeForm()' type="button" name="button"></button></div>
   <form role="form" action="" autocomplete="off" method="POST" style="position:relative">
     {% csrf_token %}
     <table class="addtable" style="width:auto;">
@@ -18,7 +19,7 @@
 </div>
 <!-- Slider -->
 <section class="swiper-container">
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper" >
 
     <!-- Only for authentification username -->
     {%for item in NFT_Collection%}
@@ -27,6 +28,12 @@
     				<p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">{{ item.cardsName }}</p>
     				<span class="swiper-caption" data-swiper-parallax="-20%">{{ item.cardsDescription }}</span>
     			</div>
+          {% if request.user ==  item.collector%}
+            <form method="post" action="{% url 'delete_card' id=item.id%}" class="form-delete">
+              {%csrf_token%}
+              <button class="btn btn-outline-danger btn-delete" type="submit">DELETE</button>
+            </form>
+          {% endif %}
         </div>
     {%endfor%}
   </div>
@@ -39,5 +46,4 @@
 {% block Scripts %}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.js"></script>
   <script type="text/javascript" src='{% static "collection/main.js" %}'></script>
-
 {% endblock %}

@@ -1,14 +1,33 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .models import NFTCollection
-from .forms import AddNFTForm
+from .forms import AddNFTForm, ownerForm
 from django.contrib.auth.models import User
 
 from django.shortcuts import get_object_or_404
+
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+)
+
+from django.contrib import messages
+
 # Create your views here.
 def home(request):
+    formss = ownerForm()
+
+    if request.method == "POST":
+        formss = ownerForm(request.POST)
+        if formss.is_valid():
+            ownervalue = formss.cleaned_data["Owner"]
+            slug=str(ownervalue)
+            return redirect('profile_slug', slug=slug)
     title = "Home page"
-    return render(request, 'collection/home.html')
+    data={'my_form': formss}
+    return render(request, 'collection/home.html', data)
 
 
 @login_required
@@ -19,6 +38,16 @@ def profile_redirect(request):
 
 @login_required
 def profile(request, slug):
+    formss = ownerForm()
+
+    if request.method == "POST":
+        formss = ownerForm(request.POST)
+        print('ownervalue')
+        if formss.is_valid():
+            ownervalue = formss.cleaned_data["Owner"]
+            print(ownervalue)
+            slug=str(ownervalue)
+            return redirect('profile_slug', slug=slug)
     userRuequest = User.objects.filter(username=slug)[0]
     form=AddNFTForm()
     data={
@@ -26,6 +55,7 @@ def profile(request, slug):
         'useeeer' : userRuequest,
         "form": form,
         "user":slug,
+        'my_form': formss
     }
     if request.method == 'POST':
         form = AddNFTForm(request.POST)
@@ -36,3 +66,21 @@ def profile(request, slug):
         else:
             message['cred_err'] = True
     return render(request, 'collection/profile.html ', data)
+
+#views function for delete card
+def DeleteCardView(request, id):
+    model = NFTCollection
+    ob = model.objects.get(id=id)
+    ob.delete()
+    def test_func(self):
+        cards=self.get_object()
+        if self.request.user == cards.collector:
+            return True
+        return False
+    return redirect('profile_slug', slug=request.user.username)
+
+def Search(request,slug):
+    if request.method == 'POST':
+        slug = request.POST.get('slug')
+        return slug
+    return redirect('profile_slug', slug)
