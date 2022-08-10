@@ -86,11 +86,7 @@ width: auto;
 padding: 5% 5%;
 }
 
-@media(max-width: 1247px) {
-.ButtonContainers{
-        width: 500px;
-    }
-}
+
 .img-fluid{
   max-width: 50px;
   height: auto;
@@ -220,7 +216,7 @@ td{
 /* form Add a card */
 #form-wrap {
   position: absolute;
-  opacity: 0;
+  display: none!important;
   transition: opacity .5s;
   width: auto;
   z-index: 2;
@@ -234,7 +230,7 @@ td{
 #form-wrap.open {
 
   transition: opacity .5s;
-  opacity: 1;
+  display: block!important;
 
 }
 
@@ -345,4 +341,10 @@ th{
 .form-delete:hover {
   opacity: 1;
   transition: opacity .3s;
+}
+
+@media(max-width: 1247px) {
+.ButtonContainers{
+        width: 500px;
+    }
 }
