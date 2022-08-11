@@ -38,16 +38,16 @@ def profile_redirect(request):
 
 @login_required
 def profile(request, slug):
-    formss = ownerForm()
 
-    if request.method == "POST":
-        formss = ownerForm(request.POST)
-        print('ownervalue')
-        if formss.is_valid():
-            ownervalue = formss.cleaned_data["Owner"]
-            print(ownervalue)
-            slug=str(ownervalue)
-            return redirect('profile_slug', slug=slug)
+    formss = ownerForm()
+    if 'Owner' in request.POST:
+        if request.method == "POST":
+            formss = ownerForm(request.POST)
+            if formss.is_valid():
+                ownervalue = formss.cleaned_data["Owner"]
+                slug=str(ownervalue)
+                return redirect('profile_slug', slug=slug)
+
     userRuequest = User.objects.filter(username=slug)[0]
     form=AddNFTForm()
     data={
@@ -57,6 +57,7 @@ def profile(request, slug):
         "user":slug,
         'my_form': formss
     }
+
     if request.method == 'POST':
         form = AddNFTForm(request.POST)
         if form.is_valid():
